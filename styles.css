@@ -40,7 +40,9 @@ a {
 }
 
 button,
-select {
+input,
+select,
+textarea {
   font: inherit;
 }
 
@@ -237,7 +239,10 @@ nav a {
   letter-spacing: -0.04em;
 }
 
-.filter-panel {
+.filter-panel,
+.quiz-panel,
+.application-form,
+.admin-panel {
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 24px;
@@ -259,8 +264,9 @@ label {
   font-weight: 600;
 }
 
-select {
-  appearance: none;
+select,
+input,
+textarea {
   border: 1px solid var(--border);
   border-radius: 12px;
   background: #fff;
@@ -375,6 +381,28 @@ select {
   border-radius: 10px;
 }
 
+.quiz-panel {
+  display: grid;
+  gap: 1rem;
+}
+
+.question-block {
+  background: #f9fbff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.quiz-result {
+  margin-top: 1.5rem;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 1rem 1.2rem;
+  color: var(--secondary);
+  box-shadow: 0 10px 24px rgba(27, 36, 48, 0.03);
+}
+
 .career-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -449,6 +477,30 @@ select {
   color: var(--muted);
 }
 
+.form-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.form-intro {
+  color: var(--muted);
+  max-width: 500px;
+}
+
+.application-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-message {
+  min-height: 1.5rem;
+  margin: 0;
+  color: var(--success);
+  font-weight: 600;
+}
+
 .faq-box {
   padding-top: 0;
 }
@@ -506,12 +558,59 @@ select {
   color: rgba(255,255,255,0.86);
 }
 
+.admin-page {
+  padding: 4rem 0;
+}
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+}
+
+.admin-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.admin-item {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.admin-item h4 {
+  margin: 0 0 0.25rem;
+  color: var(--secondary);
+}
+
+.admin-item p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.admin-item button {
+  background: #fce7e7;
+  color: #9d1c1c;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+
 @media (max-width: 980px) {
   .hero-grid,
   .filter-grid,
   .course-results,
   .career-grid,
-  .steps-grid {
+  .steps-grid,
+  .form-grid,
+  .admin-layout {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -527,7 +626,9 @@ select {
   .filter-grid,
   .course-results,
   .career-grid,
-  .steps-grid {
+  .steps-grid,
+  .form-grid,
+  .admin-layout {
     grid-template-columns: 1fr;
   }
 

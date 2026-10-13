@@ -6,7 +6,7 @@
     <title>ChooseSA | South African Course & Career Guide</title>
     <meta
       name="description"
-      content="South African university and college course finder with career guidance and enrollment support."
+      content="South African course finder for universities, colleges, and TVET institutions with career advice and enrollment support."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,15 +19,17 @@
   <body>
     <header class="topbar">
       <div class="container nav">
-        <div class="brand">
+        <div class="brand" aria-label="ChooseSA home">
           <div class="brand-mark">S</div>
           <span>ChooseSA</span>
         </div>
-        <nav>
+
+        <nav aria-label="Main navigation">
           <a href="#finder">Course Finder</a>
-          <a href="#career-guide">Career Guide</a>
+          <a href="#quiz">Career Fit Quiz</a>
           <a href="#enroll">Enroll</a>
           <a href="#faq">FAQ</a>
+          <a href="admin.html">Admin</a>
         </nav>
       </div>
     </header>
@@ -39,13 +41,15 @@
             <span class="eyebrow">South Africa student guide</span>
             <h1>Find the right university or college course for your future.</h1>
             <p>
-              Compare South African universities and colleges, discover careers,
-              and choose a study path that matches your strengths, interests, and goals.
+              Compare universities, colleges, and TVET institutions in South Africa,
+              discover career paths, and decide which course best fits your strengths.
             </p>
+
             <div class="hero-actions">
               <a href="#finder" class="btn btn-primary">Start searching</a>
-              <a href="#career-guide" class="btn btn-secondary">View career guide</a>
+              <a href="#quiz" class="btn btn-secondary">Take career quiz</a>
             </div>
+
             <ul class="hero-points">
               <li>Course matching</li>
               <li>Career guidance</li>
@@ -53,14 +57,14 @@
             </ul>
           </div>
 
-          <div class="stat-card">
+          <div class="stat-card" aria-label="Site statistics">
             <div class="stat-box">
               <strong>120+</strong>
               <span>Study options</span>
             </div>
             <div class="stat-box">
               <strong>9</strong>
-              <span>Provinces covered</span>
+              <span>Provinces</span>
             </div>
             <div class="stat-box">
               <strong>8</strong>
@@ -73,7 +77,7 @@
       <section id="finder" class="finder section-space">
         <div class="container">
           <div class="section-header">
-            <span class="eyebrow">Find your path</span>
+            <span class="eyebrow">Course finder</span>
             <h2>Choose a course that fits you</h2>
           </div>
 
@@ -150,11 +154,68 @@
             </div>
           </form>
 
-          <div id="courseResults" class="course-results"></div>
+          <div id="courseResults" class="course-results" aria-live="polite"></div>
         </div>
       </section>
 
-      <section id="career-guide" class="section-space alt-bg">
+      <section id="quiz" class="section-space alt-bg">
+        <div class="container">
+          <div class="section-header narrow">
+            <span class="eyebrow">Career fit quiz</span>
+            <h2>Get a quick recommendation based on your interests</h2>
+          </div>
+
+          <form id="quizForm" class="quiz-panel">
+            <div class="question-block">
+              <label>
+                <span>1. Which activity sounds most enjoyable to you?</span>
+                <select id="q1">
+                  <option value="">Choose one</option>
+                  <option value="technology">Building apps or websites</option>
+                  <option value="people">Helping patients or learners</option>
+                  <option value="business">Managing a project or business</option>
+                  <option value="design">Creating designs or creative visuals</option>
+                  <option value="build">Working with tools, buildings, or physical systems</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="question-block">
+              <label>
+                <span>2. What type of environment do you prefer?</span>
+                <select id="q2">
+                  <option value="">Choose one</option>
+                  <option value="office">Office / business / leadership</option>
+                  <option value="lab">Technology / labs / digital work</option>
+                  <option value="people">People-focused / healthcare / education</option>
+                  <option value="creative">Creative / design / media environment</option>
+                  <option value="handsOn">Practical / field / building environment</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="question-block">
+              <label>
+                <span>3. Which subject do you enjoy most?</span>
+                <select id="q3">
+                  <option value="">Choose one</option>
+                  <option value="math">Mathematics / Science</option>
+                  <option value="language">English / Communication / Business</option>
+                  <option value="art">Art / Design / Creative work</option>
+                  <option value="care">Health / Biology / People care</option>
+                  <option value="systems">Computers / Technology / Systems</option>
+                </select>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Recommend my course</button>
+          </form>
+
+          <div id="quizResult" class="quiz-result"></div>
+        </div>
+      </section>
+
+      <section id="career-guide" class="section-space">
         <div class="container">
           <div class="section-header narrow">
             <span class="eyebrow">Career guide</span>
@@ -165,7 +226,7 @@
         </div>
       </section>
 
-      <section id="enroll" class="section-space">
+      <section id="enroll" class="section-space alt-bg">
         <div class="container">
           <div class="section-header narrow">
             <span class="eyebrow">Enrollment guide</span>
@@ -194,6 +255,61 @@
               <p>Apply before closing dates and track each institution’s latest application notices.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="apply" class="section-space">
+        <div class="container form-grid">
+          <div>
+            <div class="section-header narrow">
+              <span class="eyebrow">Application form</span>
+              <h2>Request enrollment support</h2>
+            </div>
+            <p class="form-intro">
+              Fill in the form below and we will help you shortlist courses and guide your next steps.
+            </p>
+          </div>
+
+          <form id="applicationForm" class="application-form">
+            <label>
+              <span>Full name</span>
+              <input type="text" name="name" placeholder="Your full name" required />
+            </label>
+
+            <label>
+              <span>Email address</span>
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </label>
+
+            <label>
+              <span>Province</span>
+              <select name="province" required>
+                <option value="">Select province</option>
+                <option>Gauteng</option>
+                <option>Western Cape</option>
+                <option>KwaZulu-Natal</option>
+                <option>Eastern Cape</option>
+                <option>Free State</option>
+                <option>Limpopo</option>
+                <option>Mpumalanga</option>
+                <option>North West</option>
+                <option>Northern Cape</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Course interest</span>
+              <input type="text" name="interest" placeholder="e.g. Nursing, IT, Engineering" required />
+            </label>
+
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="4" placeholder="Tell us a little about your goals or preferred course"></textarea>
+            </label>
+
+            <button type="submit" class="btn btn-primary">Send my request</button>
+            <p id="formMessage" class="form-message" aria-live="polite"></p>
+          </form>
         </div>
       </section>
 
