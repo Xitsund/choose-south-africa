@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChooseSA | South African Course & Career Guide</title>
+    <meta
+      name="description"
+      content="South African university and college course finder with career guidance and enrollment support."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">S</div>
+          <span>ChooseSA</span>
+        </div>
+        <nav>
+          <a href="#finder">Course Finder</a>
+          <a href="#career-guide">Career Guide</a>
+          <a href="#enroll">Enroll</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">South Africa student guide</span>
+            <h1>Find the right university or college course for your future.</h1>
+            <p>
+              Compare South African universities and colleges, discover careers,
+              and choose a study path that matches your strengths, interests, and goals.
+            </p>
+            <div class="hero-actions">
+              <a href="#finder" class="btn btn-primary">Start searching</a>
+              <a href="#career-guide" class="btn btn-secondary">View career guide</a>
+            </div>
+            <ul class="hero-points">
+              <li>Course matching</li>
+              <li>Career guidance</li>
+              <li>Enrollment support</li>
+            </ul>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-box">
+              <strong>120+</strong>
+              <span>Study options</span>
+            </div>
+            <div class="stat-box">
+              <strong>9</strong>
+              <span>Provinces covered</span>
+            </div>
+            <div class="stat-box">
+              <strong>8</strong>
+              <span>Career tracks</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="finder" class="finder section-space">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Find your path</span>
+            <h2>Choose a course that fits you</h2>
+          </div>
+
+          <form id="courseForm" class="filter-panel">
+            <div class="filter-grid">
+              <label>
+                <span>Field</span>
+                <select id="fieldSelect">
+                  <option value="">Any field</option>
+                  <option>Business</option>
+                  <option>IT & Technology</option>
+                  <option>Health & Nursing</option>
+                  <option>Engineering</option>
+                  <option>Design & Media</option>
+                  <option>Education</option>
+                  <option>Agriculture</option>
+                  <option>Hospitality</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Level</span>
+                <select id="levelSelect">
+                  <option value="">Any level</option>
+                  <option>Certificate</option>
+                  <option>Diploma</option>
+                  <option>Degree</option>
+                  <option>Postgraduate</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Province</span>
+                <select id="provinceSelect">
+                  <option value="">Any province</option>
+                  <option>Gauteng</option>
+                  <option>Western Cape</option>
+                  <option>KwaZulu-Natal</option>
+                  <option>Eastern Cape</option>
+                  <option>Free State</option>
+                  <option>Limpopo</option>
+                  <option>Mpumalanga</option>
+                  <option>North West</option>
+                  <option>Northern Cape</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Institution type</span>
+                <select id="typeSelect">
+                  <option value="">Any</option>
+                  <option>University</option>
+                  <option>College</option>
+                  <option>TVET</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="recommendation-row">
+              <label>
+                <span>What kind of work do you enjoy?</span>
+                <select id="interestSelect">
+                  <option value="">Select an interest</option>
+                  <option>Problem solving</option>
+                  <option>Helping people</option>
+                  <option>Design & creativity</option>
+                  <option>Business & leadership</option>
+                  <option>Technology & innovation</option>
+                  <option>Practical hands-on work</option>
+                </select>
+              </label>
+
+              <button type="submit" class="btn btn-primary search-btn">Recommend courses</button>
+            </div>
+          </form>
+
+          <div id="courseResults" class="course-results"></div>
+        </div>
+      </section>
+
+      <section id="career-guide" class="section-space alt-bg">
+        <div class="container">
+          <div class="section-header narrow">
+            <span class="eyebrow">Career guide</span>
+            <h2>Understand the best study path for your future career</h2>
+          </div>
+
+          <div class="career-grid" id="careerGrid"></div>
+        </div>
+      </section>
+
+      <section id="enroll" class="section-space">
+        <div class="container">
+          <div class="section-header narrow">
+            <span class="eyebrow">Enrollment guide</span>
+            <h2>How to apply in South Africa</h2>
+          </div>
+
+          <div class="steps-grid">
+            <div class="step-card">
+              <span class="step">01</span>
+              <h3>Check entry requirements</h3>
+              <p>Review minimum admission points, subject requirements, and language needs.</p>
+            </div>
+            <div class="step-card">
+              <span class="step">02</span>
+              <h3>Shortlist institutions</h3>
+              <p>Compare universities, colleges, and TVET centres by course, location, and cost.</p>
+            </div>
+            <div class="step-card">
+              <span class="step">03</span>
+              <h3>Prepare your documents</h3>
+              <p>Have your ID, matric certificate, academic results, and proof of application ready.</p>
+            </div>
+            <div class="step-card">
+              <span class="step">04</span>
+              <h3>Apply early</h3>
+              <p>Apply before closing dates and track each institution’s latest application notices.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section-space faq-box">
+        <div class="container">
+          <div class="section-header narrow">
+            <span class="eyebrow">Frequently asked</span>
+            <h2>Questions students ask before enrolling</h2>
+          </div>
+
+          <div class="faq-list">
+            <details open>
+              <summary>Which is better: university or college?</summary>
+              <p>
+                Universities usually focus on degrees and research. Colleges and TVET institutions are great for practical, career-focused, shorter programs.
+              </p>
+            </details>
+            <details>
+              <summary>Can I switch courses after I enroll?</summary>
+              <p>
+                In some cases yes, if you meet the requirements and the institution approves the transfer. Always check faculty rules first.
+              </p>
+            </details>
+            <details>
+              <summary>How do I pick the right course?</summary>
+              <p>
+                Consider your interests, strengths, subjects, salary goals, job demand, and the type of work you enjoy every day.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <div>
+          <h3>ChooseSA</h3>
+          <p>Helping students pick the right course and build their future in South Africa.</p>
+        </div>
+        <div>
+          <a href="#finder">Course Finder</a>
+          <a href="#career-guide">Career Guide</a>
+          <a href="#enroll">Enroll</a>
+        </div>
+      </div>
+    </footer>
+
+    <template id="courseCardTemplate">
+      <article class="course-card">
+        <div class="card-topline">
+          <span class="badge"></span>
+          <span class="match-score"></span>
+        </div>
+        <h3 class="course-title"></h3>
+        <p class="institution"></p>
+        <p class="course-meta"></p>
+        <p class="description"></p>
+        <ul class="career-list"></ul>
+        <div class="card-actions">
+          <button class="btn btn-primary small-btn" type="button">View details</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
